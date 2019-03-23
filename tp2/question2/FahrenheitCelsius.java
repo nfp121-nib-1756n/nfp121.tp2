@@ -1,12 +1,6 @@
 package question2;
 
 
-/**
- * Décrivez votre classe FahrenheitCelsius ici.
- * 
- * @author (votre nom) 
- * @version (un numéro de version ou une date)
- */
 public class FahrenheitCelsius{
 
      /** le point d'entrée de cette application, 
@@ -15,10 +9,20 @@ public class FahrenheitCelsius{
       *  @param args ...
       */
      public static void main(String[] args){
-       try{
-       
+       int fahrenheit = 0;
+		float celsius = 0;
+         try{
+       for(int x=0;x<args.length;x++){
+		    fahrenheit=Integer.parseInt(args[x]);
+		    celsius=fahrenheitEnCelsius(Integer.parseInt(args[x]));
+		System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
+																				// format
+																				// imposés
+																				
+	
+
       
-       }catch(NumberFormatException nfe){
+       }}catch(NumberFormatException nfe){
            System.out.println("error : " + nfe.getMessage());  // en cas d'erreur 
        }
        
@@ -30,9 +34,9 @@ public class FahrenheitCelsius{
       *   @return  la conversion en degré Celsius
       */
      public static float fahrenheitEnCelsius( int f){
-       // ...
-       return 0.F;	// à compléter	en remplaçant la valeur retournée par la fonction de conversion
-       // ...
+         float celsius=5/9f * (f-32);
+                 float resultat=(int)(celsius*10)/10.0f;
+		return resultat;
      }
 
 }

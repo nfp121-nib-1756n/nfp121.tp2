@@ -1,5 +1,4 @@
 package question3;
-
 import question1.*;
 import javax.swing.*;
 import java.awt.*;
@@ -25,18 +24,16 @@ public class IHMFahrenheit extends JFrame implements ActionListener{
     boutonDeConversion.addActionListener( this );
   }
 
-  /** 
-   * méthode déclenchée lorsque le bouton de conversion est appuyé. 
-   * remarquer que le champs de droite (les degrés Celsius) n'est pas éditable.
-   * @param ae l'événement transmis
-   */
+ 
   public void actionPerformed( ActionEvent ae ){
     try{
-      int fahrenheit = 0; // valeur est une String et doit être convertie en entier, voir java.lang.Integer méthode parseInt (--> try/catch)
-      float celsius = 0F; // à compléter, en appelant la méthode ad'hoc de la question2 
-      // un test ici pour le zéro absolu (-273.1)
-
-      sortie.setText( Float.toString( celsius));
+      int fahrenheit = 0;
+      float celsius = 0F; 
+      fahrenheit= Integer.parseInt(entree.getText());
+      celsius=FahrenheitCelsius.fahrenheitEnCelsius(fahrenheit);
+      if(celsius < -273.1F) 
+      celsius = -273.1F;
+      sortie.setText(Float.toString(celsius));
     }catch(NumberFormatException nfe){
       sortie.setText("error ! ");
     }
