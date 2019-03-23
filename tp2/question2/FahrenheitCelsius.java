@@ -3,40 +3,43 @@ package question2;
 
 public class FahrenheitCelsius{
 
-     /** le point d'entrée de cette application, 
-      * dont le commentaire est à compléter
+     /** le point d'entrï¿½e de cette application, 
+      * dont le commentaire est ï¿½ complï¿½ter
       *
       *  @param args ...
       */
      public static void main(String[] args){
        int fahrenheit = 0;
-		float celsius = 0;
+    float celsius = 0;
+    final String degre = "\u00B0";
          try{
        for(int x=0;x<args.length;x++){
 		    fahrenheit=Integer.parseInt(args[x]);
 		    celsius=fahrenheitEnCelsius(Integer.parseInt(args[x]));
-		System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
+		System.out.println(fahrenheit + degre + "F -> " + celsius + degre + "C"); // ligne,
 																				// format
-																				// imposés
+																				// imposï¿½s
 																				
 	
 
       
-       }}catch(NumberFormatException nfe){
-           System.out.println("error : " + nfe.getMessage());  // en cas d'erreur 
+       }}catch(NumberFormatException ex){
+           System.out.println("error : " + ex.getMessage());  // en cas d'erreur 
        }
        
      }
      
      /** 
-      * la méthode à compléter. 
-      *   @param f la valeur en degré Fahrenheit
-      *   @return  la conversion en degré Celsius
+      * la mï¿½thode ï¿½ complï¿½ter. 
+      *   @param f la valeur en degrï¿½ Fahrenheit
+      *   @return  la conversion en degrï¿½ Celsius
       */
-     public static float fahrenheitEnCelsius( int f){
-         float celsius=5/9f * (f-32);
-                 float resultat=(int)(celsius*10)/10.0f;
-		return resultat;
+     public static float fahrenheitEnCelsius( int f ) {
+      int newFahrenheit = f - 32;
+
+         float celsius=5/9f * newFahrenheit;
+                 float final=(int)(celsius*10)/10.0f;
+		return final;
      }
 
 }
